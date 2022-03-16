@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build/* && cp src/* -r build && minify-all-js build",
+    "build": "rm -rf build && mkdir build && cp src/* -r build && minify-all-js build",
     "clean-build": "rm -rf build/*"
   },
   "keywords": [],
