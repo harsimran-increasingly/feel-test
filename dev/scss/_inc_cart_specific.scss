@@ -1,0 +1,110 @@
+
+//*--------------------------Cart--------------------------*//
+
+//Outer Modal
+%inc_af_container_outer { 
+    // max-width: 1210px;
+    @include margin(0, auto, 0, auto);
+    @include positioning(relative, null, null, null, null);
+  }
+  
+  
+  //Af List row
+  %inc_list_products_row_only { 
+    max-width: 1150px;   
+    @extend %inc_bundle_block;
+    @include margin(0, auto, 0, auto);
+    @include overflow(hidden); 
+    @include justify-content(flex-start);
+    padding-bottom: 10px;
+  
+    //Mobile
+    @include media_query("1337", "max") {
+      @include flex-flow(row);
+      @include overflow(auto);
+    }  
+    @include media_query("1198", "max") {
+      max-width: 950px;   
+    } 
+    @include media_query("1025", "max") {
+      max-width: 97%;   
+    }      
+  }
+  
+  
+  
+  //Af Product Card
+  %inc_af_product_card {
+    @extend %inc_product_card; 
+    max-width:235px;
+    min-width: 235px;  
+    @include flexbox;
+    padding: 15px;
+    margin: 0px 10px;
+    flex-direction: column;
+    box-shadow: 0px 0px 1px 1px #ddd;
+    border-color: #dddddd;
+    @include media_query("1590", "max") {
+    
+    }
+    //Mobile
+    @include media_query("820", "max") {
+      max-width: 350px;
+      min-width: 350px;  
+      @include margin(null, 5px, null, 5px);
+      @include flex-flow(row);
+      border: 1px solid transparent;
+    }
+    @include media_query("480", "max") {
+      max-width: 320px;
+      min-width: 320px;  
+    }
+    @include media_query("350", "max") {
+      max-width: 300px;
+      min-width: 300px;  
+    }
+  }
+  
+  
+  //Af product Image  
+  
+  
+  //Product Featured Image
+  %inc_af_product_card_image_wrap {
+    @extend %inc_product_image_wrap;
+   
+    @include margin(0, 0, 0, 0);
+    @include media_query("820", "max") {
+      @include padding(0, 10px, 0, 0px);
+      flex-basis:35%; 
+    }
+  }
+  
+  
+  //Product Featured Des
+  %inc_af_product_card_des_wrap {
+    @extend %inc_product_des_wrap;
+
+  
+    
+    @include media_query("820", "max") {
+      @include padding(null, 5px, null, 0px);
+      flex-basis:65%;
+    }
+  }
+  
+
+
+.inc_af_block .modal_btn {
+    display: none !important;
+}
+
+.inc_af_block .modal_btn:first-child {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    float: unset !important;
+    bottom: auto;
+}

@@ -1,0 +1,353 @@
+
+//*--------------------------Product Card--------------------------*//
+
+//Prouduct card canvas
+%inc_product_card { 
+  @include padding(12px, 15px, 12px, 15px);
+  @include margin(5px, 5px, 5px, 5px);
+  @include height_width(auto, auto);
+  background: $white;
+  border:1px solid #333A40; 
+  max-width: 230px;
+  min-width: 230px;
+  @include positioning(relative, null, null, null, null);
+  //Ipad
+  // @include media_query("1201", "max") { 
+  //   max-width: 223px;
+  //   min-width: 223px;
+  // } 
+
+  //Mobile
+  @include media_query("820", "max") { 
+    @include padding(15px, 15px, 15px, 15px);
+    max-width: 100%;
+    min-width: 100%; 
+    @include margin(auto, auto, auto, auto);
+    @include flexbox;
+    @include flex-flow(inherit);
+    box-shadow: none;
+    border: none;
+    box-sizing: border-box;
+  }
+  @include media_query("600", "max") { 
+    @include padding(15px, 10px, 25px, 10px);
+
+  }
+}
+
+
+//Gallery Dots
+%inc_product_card_gallery_item_dots{
+  @include margin(auto, 3px, auto, 3px);
+  min-width: 8px;
+  @include height_width(8px, 8px); 
+  @include radius(50%,50%,50%,50%); 
+  background: transparent;
+  border: 1px solid #343434; 
+}
+
+//Gallery dots active
+%inc_product_card_gallery_item_dots_active{
+  background: $black; 
+}
+
+
+/* Product Card Header { No content } */
+
+//Product Featured Image wrap
+%inc_product_image_wrap { 
+  @include positioning(relative, null, null, null, null);
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(40%);
+    @include padding(0, 10px, 0, 0px);
+    @include margin(null, null, 0, null);
+  }
+  @include media_query("350", "max") {
+    @include flex-basis(35%);
+
+  }
+}
+
+//Product Image inner
+%inc_product_image_inner {
+  @extend %inc_row_center;
+  @include height_width(160px, auto);
+  @include positioning(relative, null, null, null, null);
+  @include media_query("820", "max") {
+    @include height_width(130px, auto);
+  }
+}
+
+
+//Product Image value
+%inc_product_image {
+  @include height_width(95%,100%);
+  @include margin(auto, auto, auto, auto);
+  @include positioning(absolute, 0, 0, 0, 0);
+  max-width: 230px;
+  object-fit: contain;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: auto;
+  }
+  @include media_query("820", "max") {
+    max-width: 150px;
+    @include height_width(100%, 100%);
+
+  }
+
+
+  //Mobile
+  @include media_query("600", "max") {
+    max-width: 130px;
+
+  }
+}
+
+
+//Zoom icon Wrap
+%inc_image_zoom {
+  @include height_width(5px, 100%);
+  @include positioning(absolute, auto, auto, 0px, 0);
+  @include cursor(default);
+  // @include display(none); 
+}
+
+
+//Zoom icon Icon
+%inc_image_zoom_icon {
+  @include height_width(20px, 20px);
+  @include positioning(absolute, auto, auto, 20px, 0px);
+  background: url(../images/inc_sprite.svg) -425px -82px/550px no-repeat;
+  cursor: pointer;
+}
+
+
+//Color pallate wrp
+%inc_image_color_pallate_wrap {
+  @include height_width(25px, auto);
+  @include radius(50px, 50px, 50px, 50px);
+  @include positioning(absolute, auto, 10px, null, auto);
+  background: $backface_color_1;
+  @include padding(0, 7px, 0, 7px);
+}
+
+
+//Coloe Pallate Item Wrap
+%inc_image_color_pallate_item_wrap {
+  @extend %inc_row;
+  @include height_width(25px, 100%);
+  @include align-items(center);
+  @include margin(null, 5px, null, null);
+}
+
+
+//Coloe Pallate Item
+%inc_image_color_pallate_item {
+  @include height_width(15px, 15px);
+  @include radius(50%, 50%, 50%, 50%);
+  border: 2px solid #fff;
+  @include box-shadow(0px, 1px, 3px, rgba(0, 0, 0, 0.1), false);
+  background-size: 100%;
+  @include display(none); 
+  overflow: hidden;
+}
+
+//Product Information
+
+//Product Description
+%inc_product_des_wrap {
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(60%);
+    @include padding(0, 0px, 0, 0px);
+
+  }
+  @include media_query("350", "max") {
+    @include flex-basis(65%);
+  }
+}
+
+//Product Title Wrap
+%inc_product_title_wrap {
+  @include margin(null, null, 5px, null);
+}
+
+//Product Title
+%inc_product_title_text {
+  @include font-weight(normal);
+  color: $text_color_1;
+  // @include text-transform(capitalize);
+  @include text-decoration(none);
+  min-height: 40px;
+  max-height: 40px;
+  @include overflow(hidden);
+  @include display(block);
+  font-family:  $font_family;
+  font-size: 15px;
+  line-height: 20px;
+  color: $text_color_1;
+  //Mobile
+  @include media_query("820", "max") {
+
+  }
+}
+
+
+//Product Price wrap
+%inc_product_price_wrap {
+  @extend %inc_row;
+  @include margin(null, null,10px, null);
+  @include align-items(center);
+  position: relative;
+   //Mobile
+   @include media_query("820", "max") {
+    min-height: 30px;
+    @include margin(null, null,10px, null);
+
+  }
+}
+
+//Active price Wrap
+/*  %inc_active_price_wrap {
+
+    }*/
+
+//Active price text  -
+%inc_active_price_text {
+  @extend %inc_content_sm;
+  color: $text_color_1 ;
+  // @include font-weight(700);
+  @include rhythm(15, 22);
+  @include margin(null, 5px, null, null);
+  font-weight: bold;
+  font-family: $font_family;
+
+  @include media_query("820","max"){
+    font-size: 14px;
+  }
+  @include media_query("350","max"){
+    font-size: 13px;
+
+  }
+}
+ 
+//Regular Price wrap - Old Price
+%inc_regular_price_wrap { 
+  @include margin(null, null, null, 0);
+  @include media_query("820","max"){
+    @include margin(null, 0px, null, 0);
+  }
+}
+
+
+//Regular Price text - Old Price 
+%inc_regular_price_text {
+  @extend %inc_content_sm; 
+  color: #333A40;
+  @include rhythm(13, 22);
+  @include positioning(relative, null, null, null, null);
+  font-family: $font_family;
+  font-weight: normal;
+  @include media_query("820","max"){
+    font-size: 12px;
+  }
+  // opacity: 0.6;
+  //Pesdo After
+  &:after {
+    content: "";
+    @include height_width(1px, auto);
+    @include positioning(absolute, 0, 0, 0, 0);
+    @include margin(auto, auto, auto, auto);
+    background: $black;
+    @include display(block);
+  }
+}
+
+
+//Product Attributes
+%inc_product_attributes {
+  @extend %inc_row_center;
+  // box-shadow:0px 0px 1px 1px #ddd;   
+
+  border: 1px solid #323A40;
+  @include height_width(40px, 100%); 
+  @include margin(null, null, 10px, null);
+  // @include cursor(pointer);
+  @include transition(0.2s);
+  @include positioning(relative, null, null, null, null);
+  cursor: pointer;
+  //Mobile
+  @include media_query("820", "max") {
+    max-width: 100%;
+    // padding-left: 10px;
+
+  }
+   
+  
+
+  //Hover 
+  &:hover {
+    background: $canvas;
+    @include transition(0.2s);
+  }
+}
+
+
+// Product Attribute Edit
+
+%inc_product_edit{
+  @include positioning(absolute, 0, 0, 0,auto);
+  @include margin(auto,auto,auto,0);
+  @include height_width(40px, 67px);
+  @extend %inc_row_center;
+  background: $text_color_1;
+  color:$white; 
+  @include font-weight(600);
+  @include rhythm(12, 22);
+  font-family: $font_family_2;
+  text-transform: uppercase;
+  display: none;
+}
+
+
+
+
+//Product Attribute Titles Global
+%inc_product_attributes_titles_blobal {
+  @include margin(null, null, 10px, null);
+  @include padding(null, null, 10px, null);
+  @include border("bottom", 1px, solid, $border_color_1);
+}
+ 
+
+//Product Attribute color 
+%inc_product_attributes_color,
+%inc_product_attributes_size {
+  @extend %inc_content_sm;
+  color: $text_color_1;
+  @include font-weight(400); 
+  @include text-transform(uppercase);
+  font-family: $font_family_2;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+//shortn value
+%inc_shortn_value{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @include overflow(hidden); 
+  max-width: 160px; 
+  @include media_query("1590","max"){
+    max-width: 140px; 
+  }
+  @include media_query("480", "max") {
+    max-width: 120px; 
+  }
+}
+
+//Product Attribute Size
+
+//Product Quantity 

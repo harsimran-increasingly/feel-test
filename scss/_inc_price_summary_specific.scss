@@ -1,0 +1,256 @@
+
+//*--------------------------Price Summary--------------------------*//
+
+%inc_price_summary {
+  @include height_width(auto, 100%);
+  @extend %inc_product_card;
+  @include padding(0, 0, 0, 0);
+  // @include margin(34px,null,null,null); 
+  min-width: 255px;
+  max-height: 455px;
+  margin-right: 0px;
+  border-color: transparent;
+  align-self: flex-end;
+  @include media_query("1337", "max") {
+
+  }
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    @include positioning(sticky, auto, 0, 0, 0);
+    position: -webkit-sticky;
+    // @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0.1), false);
+    @include margin(auto, auto, auto, auto);
+    // @include box-shadow(1px, 5px, 40px, rgba(0, 0, 0, 0.1), false);
+    background: $white;
+    min-width: 100%;
+    @include radius(0, 0, 0, 0);
+    transition-duration: 0.6s;
+    transform: translateY(0);  
+    @include overflow(hidden);
+    transition-duration: 0.3s;
+  }
+@media screen and (max-width: 820px)  and (orientation: landscape) {
+position: relative;
+}
+}
+
+
+//Active Price Summary
+%inc_price_summary_active {
+  //Mobile
+  @include media_query("820", "max") {
+    z-index: 9;
+    transition-duration: 0.6s;
+    transform: translateY(0);
+    @include positioning(fixed, auto, 0, 0, 0);
+    transition-duration: 0.3s;
+    z-index: 999901;
+  }
+}
+
+
+//Price Summary Tile 
+%inc_price_summary_tilte { 
+  @extend %inc_heading_sm;
+  // @include border("bottom", 1px, solid, $border_color_1);
+  @include padding(10px, 10px, 10px, 10px);
+  @include text-align(left);
+  @include font-weight(600); 
+  color: $text_color_1;  
+  font-family: $font_family_3;
+  font-size: 14px;
+  // text-transform: capitalize;
+  //Mobile
+  @include media_query("820", "max") {
+    @include margin(null,null,0,null); 
+    @include padding(10px, null, 10px, null);
+  }   
+} 
+
+
+
+//Price Summary Added Items  wrap
+%inc_added_product_scroll {
+  @include height_width(auto, 100%);
+  @include overflow(auto);
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  max-height: 286px;
+ //Mobile
+  @include media_query("820", "max") {
+    @include height_width(0, 100%);
+    @include overflow(hidden);
+    transform: scaleY(0); 
+    transition-duration: 0.4s;
+    z-index: 999;
+    padding: 0px;
+  }
+}
+
+
+
+
+//Price Summary Added Items  wrap
+
+
+//Price Summary Added Items  Item
+%inc_added_product_item {
+  @include border("bottom", 1px, solid, #333A40);
+  @include padding(10px, 10px, 10px, 60px);
+  @extend %inc_row;
+  @include align-items(center);
+  @include flex-flow(wrap);
+  @include positioning(relative null, null, null, null);
+  min-height: 40px;
+  @include media_query("820", "max") {
+    min-width: 100%;
+    min-height: 60px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+
+//Price Summary Added Items  Image Wrap
+%inc_added_product_item_image_wrap {
+  max-width: 40px;
+  @include height_width(42px, 42px);
+  @include overflow(hidden);
+  @include flex-basis(15%);
+  @include positioning(absolute, 0, auto, 0, 5px);
+  @include margin(auto, auto, auto, auto);
+ 
+}
+
+
+//Price Summary Added Items  Image item
+%inc_added_product_item_image_item {
+  @include height_width(100%, 100%);
+  object-fit: contain;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: auto;
+  }
+}
+
+
+//Price Summary Added Items  title wrap
+%inc_added_product_item_title_wrap {
+  @include flex-basis(100%);
+  @include height_width(20px, auto);
+  @include overflow(hidden);
+  @include font-weight(600);
+
+}
+
+//Added Product Attribute
+%inc_added_product_attribute{
+  max-width: 100px; 
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  @include overflow(hidden); 
+  @include cursor(pointer); 
+  font-size: 14px;
+  @include media_query("820","max"){
+    max-width: 200px;
+  }
+}
+
+//Placeholder Product
+%inc_placeholder_product { 
+  //disabled
+  // @include display(none); 
+  @include padding(15px, 0px, 15px, 15px);
+  @include text-align(center);
+  @include positioning(relative, null, null, null, null);
+  color: rgba(0, 0, 0, 0.6);
+  max-width:100%; 
+  font-size: 12px;
+  @include margin(null,auto,null,auto);
+  border-bottom: 1px solid #323A40;
+  &:before{
+    content:'';
+    background:url(../images/inc_sprite.svg) -71px -4px/500px no-repeat;
+    @include height_width(25px,25px);   
+    @include display(block);
+    @include positioning(absolute, 10px, null, null, 35px);
+    @include media_query("820", "max") {
+      left: 35%;
+    }
+  }
+}
+
+
+// Price checkout wrap
+%inc_price_checkout_wrap {
+  @include height_width(auto, 100%);
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include positioning(sticky, auto, 0, 0, 0);
+    position: -webkit-sticky;
+    @include flexbox();
+    @include flex-flow(wrap);   
+    @include justify-content(flex-end);
+    @include padding(15px, null, 15px, null);
+    background: $white;
+    // border: 1px solid $border_color_1;
+    box-sizing: border-box;
+    @include justify-content(space-between);
+  }
+}
+
+
+// Cart Summary View Block
+%inc_cart_summary_view_block {
+  @include display(none);
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(35%);
+    @include display(block);
+    @include padding(0,5px, 0, 15px);
+    box-sizing: border-box;
+  }
+  @include media_query("420", "max") {
+    @include padding(0,5px, 0, 10px);
+
+  }
+}
+//View Count
+%inc_view_count{
+  @include height_width(25px, 25px);
+  @include radius(50%,50%,50%,50%);
+  @include margin(null,null,null,5px); 
+  background: #1ABC9C; 
+  color:$white;
+  @include rhythm(12, 25);
+}
+ 
+
+// Price checkout Label Wrap
+%inc_price_checkout_label_wrap {
+  @include border("bottom", 1px, solid, $border_color_1);
+  @include margin(null, null, 10px, null);
+  @include padding(15px, 15px, 0, 15px);
+  display: none;
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(45%);
+    border: none;
+    @include justify-content(flex-end);
+    box-sizing: border-box;
+    @include padding(0, 15px, 0, 15px);
+  }
+  @include media_query("600", "max") {
+    @include padding(0, 10px, 0, 15px);
+  
+  }
+  @include media_query("375", "max") {
+    @include flex-basis(30%);
+    @include padding(0, 0px, 0, 10px);
+  }
+}

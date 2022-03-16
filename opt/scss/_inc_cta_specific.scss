@@ -1,0 +1,362 @@
+//*--------------------------//Add Bundle Button // Add to cart Button // Navigation Button  //Plus Icon //Close icon //Block Active Color,Size,Images , Left/Right Arrows , Edit & Delete--------------------------*//
+
+%inc_button_wrap {
+  @extend %inc_row_center;
+  @include cursor(pointer);
+  @include positioning(relative, null, null, null, null); 
+  // &:hover {
+  //   @include Opacity(0.8);
+  // }
+}
+
+//Button Icon
+%inc_button_icon_wrap {
+  // @include height_width(auto, 30px); 
+  // min-width: 30px;
+  // display: none;
+ } 
+
+
+//button Add icon
+%inc_button_icon {
+  background: $text_color_1 url(../images/inc_sprite.svg) -217px 4px/500px no-repeat;
+  @include height_width(40px, 100%);
+  @include transition(0.2s);
+  border-radius: 2px 0px 0px 2px;
+}
+
+//button Add Active
+%inc_button_icon_active {
+  background:$primary_color url(../images/inc_sprite.svg) -115px 4px/350px no-repeat;
+  @include transition(0.2s);
+  border-radius: 2px 0px 0px 2px;
+  @include height_width(30px, 30px);
+  position: absolute;
+  top: 5px;
+  left: auto;
+  right: auto;
+}
+
+
+//Button text  wrap
+%inc_button_text_wrap { 
+  @include height_width(40px, 100%);
+}
+
+
+//Button text
+%inc_button_text {
+  background: $white; 
+  @include height_width(40px, 100%);
+  @extend %inc_row_center;
+  border:1px solid $black; 
+  @include text-align(center);
+  @include rhythm(14, 20);
+  @include font-weight(400);
+  @include media_query("1337", "max") {
+  @include rhythm(12, 20); 
+  }
+
+}
+%inc_button_text_sm{
+ background: $backface_color_2; 
+@include cursor(pointer); 
+ @include height_width(20px, 100%);
+ max-width: 90px;
+  @include text-align(center); 
+  @include margin(10px,null,10px,null); 
+ @include display(block); 
+ font-weight: normal;
+ border: 1px solid $border_color_1;
+}
+
+
+//Button Normal
+%inc_button_normal_text {
+  @extend %inc_button_text;
+  background: $primary_color; 
+  border: none;
+  font-family: $font_family_2;
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  // &:hover{
+  //   opacity: .8;
+  // }
+}
+
+
+//Plus wrap
+%inc_plus_icon_wrap {
+  @include height_width(35px, 35px);
+  @include positioning(absolute, 70px, auto, 0, 269px);
+
+  //Ipad
+  @include media_query("1337", "max") {
+    @include positioning(static, null, null, null, null);
+  }
+  @include media_query("1025", "max") {
+    @include height_width(30px, 30px);
+    position: absolute;
+    left: 275px;
+  }
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(40px, 30px);
+    @include positioning(relative, -9px, 0, 0, 0);
+    @include margin(-10px, null, -10px, 14%);
+    // @include box-shadow(1px, 1px, 3px, rgba(0, 0, 0, 0.1), false);
+    // z-index: 30;
+    @include radius(50%, 50%, 50%, 50%);
+  }
+}
+
+
+
+// Plus icon
+%inc_plus_icon {
+  @include height_width(50px, 50px);
+  background: url(../images/inc_sprite.svg) -402px -78px/622px no-repeat;
+  @include margin(null,auto,null,auto);  
+  opacity: 0.8;
+  @include media_query("1337","max"){
+    background: url(../images/inc_sprite.svg) -374px -76px/572px no-repeat;
+  }
+  @include media_query("1140", "max") {
+     background:url(../images/inc_sprite.svg) -377px -77px/582px no-repeat;
+    @include height_width(40px, 40px);
+  }
+  //Mobile 
+  @include media_query("820", "max") {
+    background: #ffffff url(../images/inc_sprite.svg) -374px -77px/582px no-repeat;
+    width: 50px;
+  }
+}
+
+
+
+//Close icon
+%inc_close_button { 
+  @include height_width(35px, 35px);
+  background : url(../images/inc_sprite.svg) -142px -79px/581px no-repeat;
+  @include positioning(absolute, 10px, 10px, auto, auto);
+  @include margin(auto, auto, auto, auto);
+  @include cursor(pointer);
+  opacity: 0.7;
+  @include media_query("820","max"){
+    background: url(../images/inc_sprite.svg) -150px -87px/600px no-repeat;
+    @include height_width(30px, 30px);
+  }
+}
+
+
+
+//Slider arrows Button
+
+//Arrow Wrap Left
+%inc_slider_arrow_wrap_left {
+  @include height_width(80px, 45px);
+  @include positioning(absolute, auto, auto, 190px, 15px);
+  @include margin(auto, auto, auto, auto);
+  @include cursor(pointer);
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: inherit;
+  //Arrow position bottom
+  //IPAD
+  @include media_query("1590", "max") {
+
+  }
+  @include media_query("1337", "max") {
+    height: 40px;
+    @include positioning(absolute, auto, auto, -50px, 30%);
+  }
+
+  @include media_query("1025", "max") {
+    @include height_width(80px, 45px);
+    @include positioning(absolute, auto, auto, 170px, 15px);
+  }
+
+
+  //No arrows
+  //Mobile
+  @include media_query("820", "max") {
+    @include display(none);
+  }
+}
+
+
+//Left
+%inc_slider_arrow_item_left {
+  @include height_width(30px, 30px);
+  background: url(../images/inc_sprite.svg) -204px 5px/280px no-repeat;
+  
+}
+
+
+
+//Arrow Wrap Right
+%inc_slider_arrow_wrap_right {
+  @include height_width(80px, 45px); 
+  @include positioning(absolute, auto, 14px, 190px, auto);
+  @include margin(auto, auto, auto, auto);
+  @include cursor(pointer);
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: inherit;
+
+  //Arrow position bottom 
+  //Ipad
+
+
+  @include media_query("1337", "max") {
+    @include positioning(absolute, auto, 30%, -50px, auto);
+    height: 40px;
+  }
+  @include media_query("1025", "max") {
+    @include height_width(80px, 45px);
+    @include positioning(absolute, auto, 14px, 170px, auto);
+  }
+
+  //No Arrows
+  //Mobile
+  @include media_query("820", "max") {
+    @include display(none);
+  }
+}
+
+
+//Right
+%inc_slider_arrow_item_right {
+  @include height_width(30px, 30px);
+  background: url(../images/inc_sprite.svg) -236px 5px/280px no-repeat;
+ 
+}
+
+
+//Edit & Delete Icon Wrap
+%inc_edit-delete_wrap {
+  @include height_width(auto, 60px);
+  @extend %inc_row;
+  @include justify-content(space-around);
+  @include positioning(absolute, 0, 0, 0, auto);
+  @include align-items(center);
+  @include transition(0.2s);
+
+  //Hover
+  &:hover {
+    @include Opacity(1);
+    @include transition(0.2s);
+  }
+
+  //Psudo After
+  &:after {
+    content: "";
+    @include height_width(18px, 1px);
+    background: $border_color_1;
+    @include positioning(absolute, 0, 0, 0, 0);
+    @include margin(auto, auto, auto, auto);
+    @include display(block);
+    display: none;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        right: 6px;
+    }
+  }
+}
+
+
+//Edit icon
+%inc_edit_icon {
+  @include height_width(19px, 17px);
+  background: url(../images/inc_sprite.svg) -262px -69px/470px no-repeat;
+  font-size: 0;
+  @include cursor(pointer);
+  display: none;
+}
+
+
+//Remove icon
+%inc_remove_icon {
+  @include height_width(23px, 23px);
+  background: #333a40 url(../images/inc_sprite.svg) -128px 2px/290px no-repeat;
+  font-size: 0;
+  @include cursor(pointer);
+  border-radius: 25px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+
+//Wrap Item
+%inc_items_active {
+  border: 1px solid $black;
+  @include transition(0.2s);
+  @include media_query("820","max"){
+    background: $black;
+    border: 1px solid transparent;
+  }
+}
+
+
+//Wrap Active
+%inc_items_value_active {
+  @include height_width(100%, 100%);
+  @include transition(0.2s);
+}
+
+
+
+
+//See More See Less Button
+
+%inc_btn_toggle_wrap{ 
+  @include display(none); 
+  @extend %inc_row_center; 
+  @include padding(10px,5px,10px,5px);
+  background: transparent ;
+  @include cursor(pointer);
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  @include media_query("820", "max") {
+  font-family: $font_family_2;
+  @include display(block);
+  margin: auto;
+  width: 95%;
+}
+
+}
+
+%inc_btn_toggle{  
+  @include height_width(auto, 140px);   
+  @include rhythm(13, 18); 
+  @include font-weight(600);
+  @include positioning(relative, null, null, null, null); 
+  @include margin(null,auto,null,auto);
+  text-transform: capitalize;
+  font-family: $font_family_2;
+  &:after{
+    content:'';
+    @include height_width(12px, 12px); 
+    @include positioning(absolute, 2px, 0, 0, auto);
+    @include margin(auto,auto,auto,auto); 
+    background: url(../images/inc_sprite.svg) -13px -2px/300px no-repeat;
+  
+}
+@include media_query("820","max"){
+  font-size: 12px;
+}
+  
+}  
+  
+
+//Toggle Active
+%inc_btn_toggle_active{  
+  &:after{
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,135 @@
+
+
+
+
+
+//*--------------------------Bundle Block PDP--------------------------*//
+
+%inc_bundle_block {  
+  // max-width: 1240px;
+  @include positioning(relative, null, null, null, null);
+  @include margin(0, auto, 20px, auto);
+  @extend %inc_row_center;
+  flex-wrap: nowrap;
+
+ //Ipad Landscape
+  @include media_query("1337", "max") {
+    justify-content: start;
+    max-width: 93%;
+    @include margin(0, auto, 0, auto);
+  }
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-flow(column);
+    @include align-items(flex-start);
+    justify-content: unset;
+    max-width: 100%; 
+  }
+}
+
+
+// Main Product Block
+%inc_product_wrap_main {
+  @include height_width(auto, auto); 
+
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+
+    &:before{  
+      @include display(none); 
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+//*--------------------------Bundle Products Slider--------------------------*//
+
+// Outer Most
+%inc_product_wrap_bundle {
+  @include height_width(auto, 680px);
+  @include positioning(relative, null, null, null, null);
+  
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: 651px;
+  }
+  //Ipad Landscape
+  @include media_query("1337", "max") {
+    @include height_width(auto, 545px);
+     min-width: 545px;
+   
+  }
+
+  //Ipad portrait
+  @include media_query("1140", "max") {
+    @include height_width(auto, 262px);
+    min-width: 262px; 
+  }
+  @include media_query("1025","max"){
+    min-width: 383px;
+  }
+  @include media_query("880","max"){
+  
+  }
+  //Mobile 
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    min-width: 100%; 
+    &:before{
+      @include display(none);
+     } 
+  }
+}
+
+
+
+//Slider Cover
+%inc_bundle_product_slider_cover {
+  max-width: 545px;
+  @include overflow(hidden); 
+  @include margin(0, auto, 0, auto);
+
+  //Ipad Landscape
+  @include media_query("1590", "max") {
+    @include height_width(auto, 567px);
+  }
+
+  //Ipad portrait 
+  @include media_query("1140", "max") {
+    @include height_width(auto, 270px);
+  }
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    max-width: 100%;
+    @include overflow(visible); 
+
+  }
+}
+
+
+//slider_wrap
+%inc_bundle_products_slider_wrap {
+  @extend %inc_row; 
+  @include overflow(hidden);
+
+  //Ipad
+  @include media_query("1337", "max") {
+    @include overflow(auto);
+  }
+
+  //Mobile
+  @include media_query("1337", "max") {
+    @include overflow(visible);
+  }
+}
+
+

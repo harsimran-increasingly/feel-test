@@ -1,0 +1,617 @@
+
+//*--------------------------Selection Modal Global--------------------------*//
+
+//Selection Modal Product Card in two columns
+%inc_product_card_two_cols {
+  @extend %inc_row;
+  @include flex-flow(wrap);
+  max-width: 100%;
+  @include padding(0, 0, 0, 0);
+  border:none;
+
+
+}
+
+
+//Selection Modal Header
+%inc_selection_modal_header {
+  @extend %inc_row_center;
+  // @include border(bottom, 1px, solid, $border_color_1);
+  @include margin(null, null, 5px, null);
+  @include flex-basis(100%);
+  @include positioning(relative, null, null, null, null);
+  @include height_width(50px, 100%);
+  @include border-sizing(border-box);
+  @include media_query("820", "max") {
+    @include margin(null, null, 10px, null);
+    @include positioning(relative,0,0,auto,0);
+    background: $white;
+    z-index: 2;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
+  }
+}
+
+
+//Selection Modal Header Title
+%inc_selection_modal_header_title {
+  @include rhythm(16, 20);
+  @include margin(auto, auto, auto, auto);
+  // display: none;
+  font-family: $font_family_3;
+  font-weight: bold;
+  // text-transform: capitalize;
+}
+
+
+//Selection Modal Title
+
+//Selection Modal Image Wrapper
+%inc_product_card_two_cols_img {
+  @include height_width(auto, 50%);
+  @include padding(15px, 15px, 15px, 15px);
+  @include margin(0, 0, 10px, 0);
+  border: none;
+  @include flex-basis(50%);
+  @include border-sizing(border-box);
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @include flex-basis(46%);
+  }
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(100%);
+    @include margin(0, 0, 0, 0);
+    @include padding(10px, 15px, 10px, 15px);
+
+  }
+}
+
+
+//Selection Modal Description Wrapper
+
+//Selection Modal Description wrap
+%inc_product_card_two_cols_des {
+  @include flex-basis(49%);
+  @include margin(0, 5px, 10px, 0);
+  @include height_width(100%, 50%);
+  @include padding(15px, 55px, 15px, 15px);
+  @include border-sizing(border-box);
+  overflow: auto;
+  @include scrollbars(5px,5px,5px,#dddddd);
+  scrollbar-width:thin;
+  max-height: 410px;
+  min-height: 410px;  
+  margin-bottom: 95px;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    max-height: 380px;
+    min-height: 380px; 
+  }
+  @include media_query("820", "max") {
+    @include flex-basis(100%);
+    max-height: fit-content;
+    min-height: auto;
+    @include padding(5px, 15px, 70px, 15px);
+    height: auto;
+    margin-bottom: 0px;
+    overflow: unset;
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @include padding(15px, 15px, 15px, 15px);
+    @include flex-basis(43%);
+  }
+}
+
+
+//Selection Modal image wrap
+%inc_product_card_two_cols_img_inner {
+  @include height_width(350px, 350px);
+  // @include border-default();
+  @include margin(null, null, 10px, null);
+
+  @include media_query("920", "max") { 
+    @include height_width(250px, 300px);
+  }
+  //Mobile
+  @include media_query("820", "max") { 
+    @include height_width(250px, 100%);
+    @include margin(null, null, 15px, null);
+    border: none;
+  }
+}
+
+//Selection Modal image wrap Item value
+%inc_product_card_two_cols_product_img {
+  max-width: 250px;
+  object-fit: contain;
+
+  //Mobile
+  @include media_query("820", "max") {
+    max-width: 250px;
+  }
+}
+
+
+//Selection Modal image gallery
+%inc_product_card_gallery_wrap {
+  @extend %inc_row_center;
+  @include flex-flow(wrap);
+  
+
+  //Mobile XS
+  @include media_query("480", "max") {
+  
+    @include justify-content(center); 
+    @include flex-flow(nowrap);
+    @include margin(null,auto,null,auto); 
+  }
+}
+
+
+//Selection Modal Image Items
+%inc_product_card_gallery_item {
+  @include height_width(60px, 60px);
+  min-width: 60px;
+  @include border-default();
+  border-color: #e0e0e0;
+  // background: $backface_color_1;
+  @include margin(5px, 5px, 5px, 5px);
+  @include positioning(relative, null, null, null, null);
+  //First Child
+ 
+  @include media_query("1590","max"){
+    @include height_width(50px, 60px);
+    min-width: 60px;
+  }
+  @include media_query("820","max"){
+    @include height_width(10px, 10px);
+    min-width: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid $text_color_1;
+    @include margin(2px, 2px, 2px, 2px);
+
+  }
+}
+
+
+//Selection Modal Image Items Value
+%inc_product_card_gallery_item_img {
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include cursor(pointer);
+  background: $white;
+  @include padding(2px,2px,2px,2px); 
+  object-fit: contain;
+  box-sizing: border-box;
+  @include media_query("820","max"){
+    display: none;
+  }
+}
+
+
+// Selection Modal Attributes
+%inc_product_attributes_modal {
+  border: none;
+  box-shadow: none;
+  @include display(block);
+  @include height_width(auto, 100%);
+  @include margin(null, null ,10px, null);
+  max-width: 100%; 
+  cursor: default;
+  position: unset;
+  padding-left: 0px;
+  &:hover {
+    background: none;
+  }
+}
+
+
+
+//Selection Modal Colors Wrap { //No Property}
+%inc_color_list{
+  @extend %inc_row;
+  @include flex-wrap(wrap);
+  @include margin(null,null,10px,null);
+  height: auto;
+
+   //Mobile
+   @include media_query("820", "max") {
+    @include margin(null,null,0,null);
+    height: auto;
+
+   
+  }
+
+}
+ 
+//Selection Modal Colors/Size Items
+%inc_product_attributes_items_wrap {
+  @include height_width(35px, 35px);
+  min-width: 35px;
+  @include cursor(pointer);
+  @include margin(0, 7px, 7px, 0);
+  @include positioning(relative, null, null, null, null);
+  @include transition(0.2s);
+  border: 1px solid #dddddd;
+}
+
+
+//Selection Modal Colors/Size Items Value
+%inc_product_attributes_items {
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include transition(0.2s);
+  overflow: hidden;
+}
+
+
+
+//Selection Modal Size Wrap { //No Property}
+
+
+//Selection Modal Size Items
+%inc_product_attributes_items_size_wrap {
+  @extend %inc_product_attributes_items_wrap;
+  @include height_width(25px, auto);
+  min-width: 25px;
+  max-width: 80px;
+  @extend %inc_row_center;
+  background: $white;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0 .25em;
+  line-height: 1.75em;
+}
+
+// Selection Modal QTY wrap
+%inc_product_qty_wrap { 
+  @include height_width(58px, 80px);
+  @include positioning(relative, null, null, null, null);
+  @include flexbox();
+  @include margin(null, 10px, null, null); 
+  @include flex-basis(auto);
+  border: 1px solid #aaaaaa;
+  background: $white;
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(55px, 100px);
+  }
+}
+
+
+//Selection Modal QTY icon Global
+%inc_product_qty_icon {
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include transition(0.2s);
+  @include cursor(pointer);
+
+  //hover
+  &:hover {
+   
+  }
+}
+ 
+
+// Selection Modal QTY Minus  wrap
+%inc_product_qty_minus_wrap {
+  @include height_width(40px, 40px);
+  @include positioning(relative, null, null, null, null);
+  display: none;
+}
+
+
+// Selection Modal QTY Minus   icon
+%inc_product_qty_minus_icon {
+  @extend %inc_product_qty_icon;
+  background: url(../images/inc_sprite.svg) -156px 9px/300px no-repeat;
+  @include media_query("820","max"){
+
+  }
+}
+
+
+// Selection Modal QTY plus Wrap
+%inc_product_qty_plus_wrap {
+  @include height_width(40px, 40px);
+  @include positioning(relative, null, null, null, null);
+  display: none;
+}
+
+
+// Selection Modal QTY plus  icon
+%inc_product_qty_plus_icon {
+  background:  url(../images/inc_sprite.svg) -188px 9px/300px no-repeat;
+  @extend %inc_product_qty_icon;
+  @include media_query("820","max"){
+  }
+}
+
+
+// Selection Modal QTY input Wrap
+%inc_product_qty_input_wrap {
+  @include height_width(100%, 100%);
+  @include positioning(relative, null, null, null, null);
+
+}
+
+
+// Selection Modal QTY input  
+%inc_product_qty_input {
+  border: none;
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include padding(0, 5px, 0, 25px);
+  @include box-sizing(border-box);
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  @include text-align(left);
+  background:  transparent;
+  cursor: default;
+  @include media_query("820","max"){
+    font-size: 16px;
+  }
+}
+
+
+//Fixed Button Set Wrap
+%inc_fixed_button_set{
+  @extend %inc_row;
+  @include media_query("820", "max") {
+    @include positioning(fixed, auto, 0, 0, 0);
+    @include margin(auto,auto,auto,auto);
+    @include padding(10px,10px,10px,10px);
+    background: $white;
+    @include height_width(auto, 100%);
+    @include box-shadow(0, 0px, 13px, rgba(0, 0, 0, 0.1), false);
+    transition-duration: 0.6s;
+    position: fixed !important;
+    @include media_query("820", "max") {
+      position: relative !important;
+      background: transparent;
+    }
+  }  
+}
+
+//Long Description
+
+
+%inc_modal_long_des{
+  @include positioning(absolute, 50px, auto, 0, 0);
+  @include padding(50px,20px,20px,20px);
+  max-width: 446px;
+  @include height_width(null ,100%);
+  height: calc(100% - 50px);
+  transform: translateX(-100%);  
+  background: $white; 
+  transition-duration: 0.3s;
+  z-index: 10;  
+  box-sizing: border-box;
+  border-right: 1px solid #dddddd;
+  @include media_query("920", "max") {
+    max-width: 400px;
+  }
+  @include media_query("820", "max") {
+    display: block;
+    top: 75px !important;
+  }
+  
+  // @include media_query("820", "max") {
+      top: auto !important;
+      position: relative !important;
+      height: auto !important;
+      transform: none !important; 
+      padding: 0px !important;
+      border: none !important;
+      height: 0 !important;
+      width: 100% !important; 
+      max-width: 100% !important;
+      z-index: initial !important;
+      display: none ;
+      &::before{
+        display: none !important;
+      }
+      .inc_product_Info_Full_desc_info_text{
+        position: relative !important;
+        padding: 0px !important;
+        height: auto !important;
+        top: auto !important;
+      }
+  // }
+  @media screen and (max-width: 820px)  and (orientation: landscape) {
+    @include height_width(100%, 100%);
+
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // max-width: 406px;
+  }
+  %inc_modal_long_des_text{
+    // @include overflow(auto);
+    @include positioning(absolute, 50px, auto, 0, 0);
+    @include padding(15px,15px,15px,15px); 
+    @include height_width(85%, 100%);
+    font-size: 14px;
+    font-family: $font_family;
+    box-sizing: border-box;
+    @include scrollbars(3px,3px,3px,#dddddd);
+    scrollbar-width: thin;
+    font-weight: normal;
+    line-height: 22px;
+    @include media_query("820", "max") {
+      @include height_width(335px, 100%);
+      @include overflow(auto);  
+      padding-bottom: 80px !important;
+    }
+    @media screen and (max-width: 820px)  and (orientation: landscape) {
+      @include height_width(85%, 100%);
+    }
+    @include media_query("820","max") {
+      height: auto;
+      position: relative;
+      top: unset;
+      padding-top: 15px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+    }
+  }
+  &:before{ 
+      content: 'Description';
+      font-size: 20px;
+      @include positioning(absolute, 0, null, auto, 0);
+      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid #dddddd;
+      @include height_width(auto, 100%);
+      @include padding(12px,20px,12px,20px);
+      padding-left: 20px;
+      background:$white;
+      box-sizing: border-box;
+      font-family: $font_family_2;
+      @include scrollbars(3px,3px,5px,#dddddd);
+      font-weight: bold;
+      @include media_query("820","max"){
+        border-top: 1px solid #dddddd;
+        background: $canvas;
+      }
+}
+  
+.Reveal-content{
+  max-height: none !important;
+  img{
+    width: 100%;
+  }
+}
+img{
+  width: 100%;
+}
+// .Layout-golden-sub{}
+.productpage-features-brand{
+  width: 100%;
+  height: 100%;
+}
+.Reveal-more{
+  display: none;
+  &::after{
+    display: none;
+  }
+}
+} 
+   
+%inc_modal_long_des_active {
+  transform: translateX(0%);  
+  transition-duration: 0.3s;
+  display: block;
+  @include media_query("820","max"){
+    transform: translateY(0);  
+    @include positioning(fixed, auto, null, 0, null);
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  @include media_query("480", "max") {
+    position: relative;
+    transform: scaleY(1);
+    border-right: none;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    height: auto;
+  }
+}
+
+
+//Shade Description
+%inc_shade_des{ 
+
+    @include positioning(absolute, null, 0, 0, 0);
+    @include text-align(center);
+    background: $white;
+    @include height_width(auto, 100%);
+    @include margin(auto,auto,auto,auto); 
+    z-index: 9;
+  @include padding(10px,10px,10px,10px);  
+  
+
+}
+
+
+%config_title{
+  font-family: $font_family_2;
+  color: $black;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.32;
+}
+
+%config_item_block{
+  border: 1px solid #e2e1dd;
+  background-color: #f8f7f5;
+  display: block;
+  line-height: 2;
+  min-height: 40px;
+  min-height: 2rem;
+  min-width: 40px;
+  min-width: 2.5rem;
+  margin: 0 8px 8px 0;
+  margin: 0 .5rem .5rem 0;
+  padding: 0 12px;
+  padding: 0 .75rem;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0 5px;
+  cursor: pointer;
+    &:first-child{
+      margin-left: 0px;
+    }
+    &:last-child{
+      margin-right: 0px;
+    }
+    &.active{
+      background-color: #00b300;
+      border: 1px solid #00b300;
+      color: #fff;
+    }
+    &:hover{
+      color: #0072ce ;
+      @include media_query("820","max"){
+        color: #ffffff;
+      }
+    }
+}
+
+.inc_readMore {
+  font-weight: bold;
+  margin: 5px 0;
+  display: block;
+  text-decoration: underline;
+  display: inline-block;
+  cursor: pointer;
+  @include media_query("820", "max") {
+    display: none;
+  }
+}
+.inc_product_Info_Full_desc_info_block.show_full_desc .Tabnav {
+  margin: 20px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  list-style: none;
+  text-align: left;
+  padding: 0px;
+  li{
+    &:nth-child(2){
+      display: none;
+    }
+  }
+}
+.inc_product_Info_Full_desc_info_block.show_full_desc .Reveal-content {
+  overflow: hidden;
+}
