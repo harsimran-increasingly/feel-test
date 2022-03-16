@@ -14,5 +14,8 @@
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "minify-all-js": "^0.1.9"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0"
   }
 }
